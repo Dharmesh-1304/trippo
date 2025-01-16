@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel E-Commerce</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <!-- Logo -->
+        <div class="navbar-logo">
+          <img src="/images/logo.png">
+          <a href="/"></a>
+        </div>
+    
+        <!-- Navigation Links -->
+        <ul class="navbar-links">
+          <li class=" dropdown">
+            <a class = "dropbtn">Shop</a>
+            <div class="dropdown-content">
+              <a href="/products/men">Men</a>
+              <a href="/products/women">Women</a>
+              <a href="/products/kids">Kids</a>
+              <a href="/products/accessories">Accessories</a>
+              <a href="/products/skincare">Skincare</a>
+            </div>
+          </li>
+          <li><a href="/booking">Booking</a></li>
+          <li class="dropdown">
+            <a href="/destinations" class="dropbtn">Destinations</a>
+            <div class="dropdown-content">
+              <!-- List of Indian states -->
+              <a href="/destinations/andhra-pradesh">Andhra Pradesh</a>
+              <a href="/destinations/arunachal-pradesh">Arunachal Pradesh</a>
+              <a href="/destinations/assam">Assam</a>
+              <a href="/destinations/bihar">Bihar</a>
+              <a href="/destinations/chhattisgarh">Chhattisgarh</a>
+              <a href="/destinations/goa">Goa</a>
+              <a href="/destinations/gujarat">Gujarat</a>
+              <a href="/destinations/haryana">Haryana</a>
+              <a href="/destinations/himachal-pradesh">Himachal Pradesh</a>
+              <a href="/destinations/jharkhand">Jharkhand</a>
+              <a href="/destinations/karnataka">Karnataka</a>
+              <a href="/destinations/kerala">Kerala</a>
+              <a href="/destinations/madhya-pradesh">Madhya Pradesh</a>
+              <a href="/destinations/maharashtra">Maharashtra</a>
+              <a href="/destinations/manipur">Manipur</a>
+              <a href="/destinations/meghalaya">Meghalaya</a>
+              <a href="/destinations/mizoram">Mizoram</a>
+              <a href="/destinations/nagaland">Nagaland</a>
+              <a href="/destinations/odisha">Odisha</a>
+              <a href="/destinations/punjab">Punjab</a>
+              <a href="/destinations/rajasthan">Rajasthan</a>
+              <a href="/destinations/sikkim">Sikkim</a>
+              <a href="/destinations/tamil-nadu">Tamil Nadu</a>
+              <a href="/destinations/telangana">Telangana</a>
+              <a href="/destinations/tripura">Tripura</a>
+              <a href="/destinations/uttar-pradesh">Uttar Pradesh</a>
+              <a href="/destinations/uttarakhand">Uttarakhand</a>
+              <a href="/destinations/west-bengal">West Bengal</a>
+              <a href="/destinations/andaman-nicobar">Andaman and Nicobar Islands</a>
+              <a href="/destinations/chandigarh">Chandigarh</a>
+              <a href="/destinations/dadra-nagar-haveli-daman-diu">Dadra and Nagar Haveli and Daman and Diu</a>
+              <a href="/destinations/delhi">Delhi</a>
+              <a href="/destinations/jammu-kashmir">Jammu and Kashmir</a>
+              <a href="/destinations/ladakh">Ladakh</a>
+              <a href="/destinations/lakshadweep">Lakshadweep</a>
+              <a href="/destinations/pondicherry">Puducherry</a>
+            </div>
+          </li>
+          <li><a href="/inspiration">Inspiration</a></li>
+        </ul>
+    
+        <!-- Search Bar -->
+        <div class="navbar-search">
+          <input type="text" placeholder="Search for destinations type" id="searchInput" onkeypress="handleSearch(event)">
+          <i id="searchIcon" class="fas fa-search" onclick="triggerSearch()"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- <section id="hero">
+      <h1></h1>
+      
+    </section> -->
+
+
+<section id="carousel">
+    <div class="carousel-container">
+      <div class="carousel-slide" onclick="navigateToCategory('Beach')">
+        <img src="/images/beach.jpg" alt="Beach">
+        <div class="carousel-caption">Explore Beach Products</div>
+      </div>
+      <div class="carousel-slide" onclick="navigateToCategory('Mountain')">
+        <img src="/images/mountain.jpg" alt="Mountain">
+        <div class="carousel-caption">Gear Up for Mountains</div>
+      </div>
+      <div class="carousel-slide" onclick="navigateToCategory('City')">
+        <img src="/images/city.jpg" alt="City">
+        <div class="carousel-caption">City Essentials</div>
+      </div>
+    </div>
+    <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+  </section>
+
+    <section id="categories">
+      <h2>Shop by Categories</h2>
+      <div class="category-grid">
+        <% categories.forEach(category => { %>
+          <div class="category-card">
+            <img src="<%= category.image %>" alt="<%= category.name %>">
+            <h3><%= category.name %></h3>
+            <p><%= category.description %></p>
+            <a href="/products/<%= category.name %>" class="btn">Shop Now</a>
+          </div>
+        <% }); %>
+      </div>
+    </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Trippo. All rights reserved.</p>
+</footer>
+<script src="/js/script.js"></script>
+</body>
+</html>
